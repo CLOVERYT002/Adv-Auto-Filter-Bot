@@ -341,7 +341,7 @@ async def auto_filter (bot, update):
 
         await bot.send_message(
             chat_id = update.chat.id,
-            text=f"Found {(len(results))} Results For Query: <code>{query}</code>",
+            text=f"🔎Found {(len(results))} 🎥Results For Query: <code>{query}</code>",
             reply_markup=reply_markup,
             parse_mode="html",
             reply_to_message_id=update.message_id
@@ -435,7 +435,7 @@ async def cb_handler(bot, query:CallbackQuery, group=1):
     
         if int(index_val) == (len(result) -1) or int(index_val) == 10: # Max 10 Page
             temp_results.append([
-                InlineKeyboardButton("⏪ Back", callback_data=f"{index_val} | {query.from_user.id} | back_btn")
+                InlineKeyboardButton("🔘 Back🔘", callback_data=f"{index_val} | {query.from_user.id} | back_btn")
             ])
     
         elif int(index_val) == 0:
@@ -443,8 +443,8 @@ async def cb_handler(bot, query:CallbackQuery, group=1):
     
         else:
             temp_results.append([
-                InlineKeyboardButton("⏪ Back", callback_data=f"{index_val} | {query.from_user.id} | back_btn"),
-                InlineKeyboardButton("Next ⏩", callback_data=f"{index_val} | {query.from_user.id} | next_btn")
+                InlineKeyboardButton("🔘 Back🔘", callback_data=f"{index_val} | {query.from_user.id} | back_btn"),
+                InlineKeyboardButton("⭕️Next ⭕️", callback_data=f"{index_val} | {query.from_user.id} | next_btn")
             ])
     
         reply_markup = InlineKeyboardMarkup(temp_results)
