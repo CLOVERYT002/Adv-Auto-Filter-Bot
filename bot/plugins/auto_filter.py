@@ -335,7 +335,7 @@ async def auto_filter (bot, update):
         result += [results[i * 30 :(i + 1) * 30 ] for i in range((len(results) + 30 - 1) // 30 )]
         
         if len(results) >30:
-            result[0].append([InlineKeyboardButton("Next ⏩", callback_data=f"0 | {update.from_user.id} | next_btn")])
+            result[0].append([InlineKeyboardButton("⭕️Next ⭕️", callback_data=f"0 | {update.from_user.id} | next_btn")])
 
         reply_markup = InlineKeyboardMarkup(result[0])
 
@@ -353,10 +353,10 @@ async def cb_handler(bot, query:CallbackQuery, group=1):
     
     if cb_data == "start":
         buttons = [[
-            InlineKeyboardButton('My Dev 👨‍🔬', url='https://t.me/AlbertEinstein_TG'),
-            InlineKeyboardButton('Source Code 🧾', url ='https://github.com/AlbertEinsteinTG/Adv-Auto-Filter-Bot')
+            InlineKeyboardButton('My Dev 👨‍🔬', url='https://t.me/cinemaclubcc'),
+            InlineKeyboardButton('Source Code 🧾', url ='https://github.com/CLOVERYT002/Adv-Auto-Filter-Bot')
         ],[
-            InlineKeyboardButton('Support 🛠', url='https://t.me/CrazyBotszGrp')
+            InlineKeyboardButton('Support Group 👥', url='https://t.me/Moviez_group_mg')
         ],[
             InlineKeyboardButton('Help ⚙', callback_data="help")
         ]]
